@@ -1,4 +1,4 @@
-package Buku;
+cNpackage Buku;
 
 public class bukuKomik extends Buku {
     private String genre;
