@@ -1,5 +1,3 @@
-package SepedaDemo;
-
 public class SepedaGunung extends Sepeda { //menunjukkan Sepeda Gunung mewarisi class sepeda
     
     private String tipeSuspensi;
