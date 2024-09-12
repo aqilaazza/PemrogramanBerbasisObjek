@@ -19,5 +19,21 @@ public class MotorDemo {
         motor3.setPlatNomor("D 8343 CV");
         motor3.setKecepatan(60);
         motor3.displayStatus();
+
+        Motor motor4 = new Motor();
+        motor4.setPlatNomor("AG 2319 AZ");
+        motor4.setIsMesinOn(true);
+        motor4.setKecepatan(110);
+        motor4.getKecepatan();
+        motor4.displayStatus();
+
+        Motor motor5 = new Motor();
+        motor5.setPlatNomor("AG 1245 AM");
+        motor5.setIsMesinOn(true);
+        motor5.setKecepatan(-20);
+        motor5.getKecepatan();
+        motor5.displayStatus();
+
+
     }
 }

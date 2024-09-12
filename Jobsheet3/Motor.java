@@ -39,9 +39,17 @@ public class Motor {
     }
 
     public void setKecepatan(int kecepatan) {
-        if (!this.isMesinOn && kecepatan > 0) {
-            System.out.println("Kecepatan tidak boleh lebih dari 0 jika mesin off");
-        } else {
+        if (!this.isMesinOn) { // jika tidak nyala
+            if (kecepatan > 0) {
+                System.out.println("Kecepatan tidak boleh lebih dari 0 jika mesin off");
+            } else {
+                System.out.println("Mesin off");
+            }
+        } else if (kecepatan > 100) {
+            System.out.println("Maksimal kecepatan tidak boleh lebih dari 100 jika mesin on");
+        } else if (kecepatan < 0) { 
+            System.out.println("Nilai kecepatan tidak boleh negatif dan harus lebih dari nol");
+        }else {
             this.kecepatan = kecepatan;
         }
     }
