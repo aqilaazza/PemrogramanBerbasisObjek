@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Meja {
     private int noMeja;
-    private int kursi;
+    private String tipeMeja;
     private ArrayList<Reservasi> riwayatReservasi;
 
-    public Meja(int noMeja, int kursi) {
+    public Meja(int noMeja, String tipeMeja) {
         this.noMeja = noMeja;
-        this.kursi = kursi;
+        this.tipeMeja = tipeMeja;
         this.riwayatReservasi = new ArrayList<>();
     }
 
@@ -38,21 +38,12 @@ public class Meja {
         this.noMeja = noMeja;
     }
 
-    public int getKursi() {
-        return kursi;
+    public String getTipeMeja() {
+        return tipeMeja;
     }
 
-    public void setKursi(int kursi) {
-        this.kursi = kursi;
-    }
-
-    public String toString() {
-        String info = "";
-        info += "Meja{" +
-               "noMeja=" + noMeja +
-               ", kursi=" + kursi +
-               '}';
-        return info;
+    public void setTipeMeja(String tipeMeja) {
+        this.tipeMeja = tipeMeja;
     }
 }
 

@@ -26,15 +26,4 @@ public class Restaurant {
     public ArrayList<Meja> getMeja() {
         return meja;
     }
-    
-    public void tampilkanMeja() {
-        if (meja.isEmpty()) {
-            System.out.println("Tidak ada meja yang tersedia.");
-        } else {
-            System.out.println("Daftar Meja:");
-            for (Meja m : meja) {
-                System.out.println(m);
-            }
-        }
-    }
 }
