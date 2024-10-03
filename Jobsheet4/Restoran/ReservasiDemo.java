@@ -8,16 +8,19 @@ public class ReservasiDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Restaurant restoran = new Restaurant("Restoran ABC");
+        ArrayList<MenuItem> menuItems = new ArrayList<>();
 
         int pilih;
-            System.out.println("Welcome To " + restoran.getNama());
+        System.out.println("Welcome To " + restoran.getNama());
         do {
             System.out.println("\n============= Menu: =============");
             System.out.println("|| 1. Tambah Meja                ||");
             System.out.println("|| 2. Melakukan Reservasi        ||");
             System.out.println("|| 3. Tampilkan Ketersediaan Meja||");
             System.out.println("|| 4. Tampilkan Riwayat Reservasi||");
-            System.out.println("|| 5. Keluar                     ||");
+            System.out.println("|| 5. Tambah Menu Item           ||");
+            System.out.println("|| 6. Tampilkan Menu              ||");
+            System.out.println("|| 7. Keluar                     ||");
             System.out.println("===================================");
             System.out.print("Masukkan pilihan: ");
             pilih = sc.nextInt();
@@ -27,7 +30,7 @@ public class ReservasiDemo {
                 case 1:
                     System.out.print("Masukkan nomor meja: ");
                     int noMeja = sc.nextInt();
-                    System.out.print("Masukkan tipe meja: "); // Update to ask for type
+                    System.out.print("Masukkan tipe meja: ");
                     String tipeMeja = sc.next();
                     Meja mejaBaru = new Meja(noMeja, tipeMeja);
                     restoran.tambahkanMeja(mejaBaru);
@@ -46,11 +49,9 @@ public class ReservasiDemo {
                             System.out.println("Meja No." + meja.getNomorMeja() + " tidak tersedia.");
                         }
                     }
-                    // Melakukan Reservasi
-                    
+
                     System.out.print("Masukkan nomor meja untuk reservasi: ");
                     int mejaReservasi = sc.nextInt();
-                    
 
                     Meja mejaPilihan = null;
                     for (Meja meja : restoran.getMeja()) {
@@ -69,7 +70,6 @@ public class ReservasiDemo {
                     break;
 
                 case 3:
-                    // Tampilkan Ketersediaan Meja
                     for (Meja meja : restoran.getMeja()) {
                         if (meja.isAvailable()) {
                             System.out.println("Meja No." + meja.getNomorMeja() + " tersedia.");
@@ -80,21 +80,41 @@ public class ReservasiDemo {
                     }
                     break;
 
-                case 4 :
-                // menampilkan riwayat reservasi
-                for (Meja meja : restoran.getMeja()) {
+                case 4:
+                    for (Meja meja : restoran.getMeja()) {
                         System.out.println("Riwayat Reservasi Meja No." + meja.getNomorMeja() + ":");
                         ArrayList<Reservasi> reservasiList = meja.getReservasi();
-                        if (reservasiList.isEmpty()) {
+                        if (!reservasiList.isEmpty()) {
                             for (Reservasi reservasi : reservasiList) {
                                 System.out.println("Nama Tamu: " + reservasi.getNamaTamu() +
                                                    ", Waktu: " + reservasi.getWaktuReservasi());
                             }
+                        } else {
+                            System.out.println("Tidak ada reservasi.");
                         }
                     }
                     break;
 
                 case 5:
+                    System.out.print("Masukkan nama menu item: ");
+                    String namaMenu = sc.nextLine();
+                    System.out.print("Masukkan harga menu item: ");
+                    double hargaMenu = sc.nextDouble();
+                    System.out.print("Masukkan kategori menu item: ");
+                    String kategoriMenu = sc.next();
+                    MenuItem menuItemBaru = new MenuItem(namaMenu, hargaMenu, kategoriMenu);
+                    menuItems.add(menuItemBaru);
+                    System.out.println("Menu item " + namaMenu + " berhasil ditambahkan.");
+                    break;
+
+                case 6:
+                    System.out.println("Menu Item yang Tersedia:");
+                    for (MenuItem item : menuItems) {
+                        System.out.println(item);
+                    }
+                    break;
+
+                case 7:
                     System.out.println("Terimakasih telah berkunjung.");
                     break;
 
@@ -102,7 +122,7 @@ public class ReservasiDemo {
                     System.out.println("Pilihan tidak valid. Silakan coba lagi.");
             }
             System.out.println();
-        } while (pilih != 5);
+        } while (pilih != 7);
 
         sc.close();
     }
