@@ -1,0 +1,19 @@
+package Jobsheet8;
+
+public class PerkalianKu {
+    public void perkalian(int a, int b) {
+        System.out.println(a*b);
+    }
+
+    public void perkalian(int a, int b, int c) {
+        System.out.println(a*b*c);
+    }
+
+    public static void main(String args[]) {
+        PerkalianKu objek = new PerkalianKu();
+    
+        objek.perkalian(25, 43);
+        objek.perkalian(34,23,56);
+    }
+    
+}
