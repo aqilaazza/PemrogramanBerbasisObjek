@@ -29,5 +29,9 @@ public class Buku {
         tersedia = true;
         System.out.println("Buku " + getJudul() + " berhasil dikembalikan.");
     }
+    public void deskripsiBuku() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deskripsiBuku'");
+    }
 
 }
