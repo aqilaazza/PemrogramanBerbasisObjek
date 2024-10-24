@@ -1,6 +1,6 @@
 package UTS;
 
-public class PemegangSaham {
+public class PemegangSaham extends Manajer {
     private int deviden;
     private int saham;
 
