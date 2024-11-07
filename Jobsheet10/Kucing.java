@@ -4,7 +4,7 @@ public class Kucing extends Hewan {
 
     @Override
     public void bergerak() {
-        System.out.println("Berjalan dengan KAKI, \"Tap..tap..\"");
+        System.out.println("Berjalan dengan KAKI, \"Tap..tap\"");
     }
     
 }
