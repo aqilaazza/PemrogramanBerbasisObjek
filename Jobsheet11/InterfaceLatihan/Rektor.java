@@ -12,11 +12,21 @@ public class Rektor {
 
     }
 
-    public void beriSertifikatMawapres(IBerprestasi mahasiswa) {
+    public void beriSertifikatMawapresInternasional(IBerprestasi mahasiswa) {
         System.out.println("Saya REKTOR, memberikan sertifikat MAWAPRES. ");
         System.out.println("Selamat! Bagaimana Anda bisa berprestasi? ");
-        mahasiswa.menjuaraiKompetisi();
-        mahasiswa.membuatPublikasiIlmiah();
+        mahasiswa.menjuaraiKompetisiInternasional();
+        mahasiswa.membuatPublikasiIlmiahInternasional();
+        
+
+        System.out.println("----------------------------------------------------");
+    }
+
+    public void beriSertifikatMawapresNasional(IBerprestasi mahasiswa) {
+        System.out.println("Saya REKTOR, memberikan sertifikat MAWAPRES. ");
+        System.out.println("Selamat! Bagaimana Anda bisa berprestasi? ");
+        mahasiswa.menjuaraiKompetisiNasional();
+        mahasiswa.membuatPublikasiIlmiahNasional();
         
 
         System.out.println("----------------------------------------------------");
